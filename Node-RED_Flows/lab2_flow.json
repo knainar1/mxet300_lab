@@ -1,0 +1,155 @@
+[
+    {
+        "id": "d214d361.ab13c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b9e40dce.c89c8",
+        "type": "inject",
+        "z": "d214d361.ab13c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "c9a8719d.b46ec"
+            ]
+        ]
+    },
+    {
+        "id": "c9a8719d.b46ec",
+        "type": "file in",
+        "z": "d214d361.ab13c",
+        "name": "",
+        "filename": "/tmp/volttemp.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "b9fe69ce.69d658",
+                "afd77d7d.08de2"
+            ]
+        ]
+    },
+    {
+        "id": "b9fe69ce.69d658",
+        "type": "ui_gauge",
+        "z": "d214d361.ab13c",
+        "name": "",
+        "group": "1923b38b.da30cc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Robot Diagnostics",
+        "label": "Volts",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "13",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "afd77d7d.08de2",
+        "type": "ui_chart",
+        "z": "d214d361.ab13c",
+        "name": "",
+        "group": "1923b38b.da30cc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1923b38b.da30cc",
+        "type": "ui_group",
+        "name": "Battery Voltage",
+        "tab": "ca03310f.0de84",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ca03310f.0de84",
+        "type": "ui_tab",
+        "name": "Lab2",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "17cb3e9e6088b808",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
