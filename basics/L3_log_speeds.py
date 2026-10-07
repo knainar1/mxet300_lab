@@ -29,5 +29,4 @@ while True:
     log.tmpFile(thetadot, "thetadot.txt")
     log.tmpFile(pdl, "pdl.txt")
     log.tmpFile(pdr, "pdr.txt")
-
     time.sleep(0.2)                         # give Node-RED time to read; lets Ctrl+C register
