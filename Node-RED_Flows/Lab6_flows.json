@@ -1,0 +1,342 @@
+[
+    {
+        "id": "9fd9bdefe38022dc",
+        "type": "tab",
+        "label": "Lidar",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2c5f8f7985f1a98a",
+        "type": "inject",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "0558894a865bd5d0",
+                "655cfd4b7297b62b",
+                "829f3542865d0c54",
+                "1b404d53758d0d72"
+            ]
+        ]
+    },
+    {
+        "id": "0558894a865bd5d0",
+        "type": "file in",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "filename": "/tmp/nearest_distance.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "b4b9d9623d05edaf"
+            ]
+        ]
+    },
+    {
+        "id": "655cfd4b7297b62b",
+        "type": "file in",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "filename": "/tmp/nearest_angle.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "178faed984e17ed4"
+            ]
+        ]
+    },
+    {
+        "id": "829f3542865d0c54",
+        "type": "file in",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "filename": "/tmp/nearest_x.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "cb231ab10d956f79"
+            ]
+        ]
+    },
+    {
+        "id": "1b404d53758d0d72",
+        "type": "file in",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "filename": "/tmp/nearest_y.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "34684358985fdbcc"
+            ]
+        ]
+    },
+    {
+        "id": "cb231ab10d956f79",
+        "type": "ui_chart",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "group": "0ea1b3c9044cd3e0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "X Axis (m)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34684358985fdbcc",
+        "type": "ui_chart",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "group": "d2a84cd3fabe5e1d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Y axis (m)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 740,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "178faed984e17ed4",
+        "type": "ui_gauge",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "group": "2945a18ef6373577",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "compass",
+        "title": "Compass Heading Angle (Degrees)",
+        "label": "Degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b4b9d9623d05edaf",
+        "type": "ui_chart",
+        "z": "9fd9bdefe38022dc",
+        "name": "",
+        "group": "51594ed7814f9268",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Distance (m)",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ea1b3c9044cd3e0",
+        "type": "ui_group",
+        "name": "X Direction",
+        "tab": "37786108c123caba",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d2a84cd3fabe5e1d",
+        "type": "ui_group",
+        "name": "Y Direction",
+        "tab": "37786108c123caba",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2945a18ef6373577",
+        "type": "ui_group",
+        "name": "ObjectAngle",
+        "tab": "37786108c123caba",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "51594ed7814f9268",
+        "type": "ui_group",
+        "name": "Radius",
+        "tab": "37786108c123caba",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "37786108c123caba",
+        "type": "ui_tab",
+        "name": "LidarSensor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1487fd895f3c9fc2",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
